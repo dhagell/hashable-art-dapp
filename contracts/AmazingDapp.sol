@@ -1,14 +1,12 @@
-pragma solidity ^0.4.24;
+pragma solidity >=0.5.16;
 
 contract AmazingDapp {
-  mapping (string => bool) private names;
-
-  function checkIfExists(string name) constant returns (bool) {
-    return names[name];
-  }
-
-  function registerName(string name) {
-    names[name] = true;
-  }
-
+	mapping (string => bool) private names;
+	
+	function checkIfExist(string memory name) public view returns (bool){
+		return names[name];
+	}
+	function registerName(string memory name) public {
+		names[name] = true;
+	}
 }
