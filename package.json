@@ -1,9 +1,9 @@
 {
-  "name": "ReactDappBoilerplate",
+  "name": "hashable-art-dapp",
   "version": "2.0.0",
   "private": true,
   "license": "MIT",
-  "description": "A Foundational UI Boilerplate for Ethereum Dapps Built With Trufle",
+  "description": "Hashable.Art Dapp NFT Marketplace",
   "scripts": {
     "clean": "rimraf dist",
     "build": "webpack --progress --verbose --colors --display-error-details --config webpack/common.config.babel.js",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/hackingbeauty/base-single-page-app-architecture.git"
+    "url": "https://github.com/dhagell/hashable-art-dapp.git"
   },
   "devDependencies": {
     "autoprefixer": "^6.6.1",
@@ -36,7 +36,7 @@
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.10.0",
+    "eslint-plugin-react": "^7.23.1",
     "exports-loader": "^0.6.2",
     "express": "^4.13.4",
     "file-loader": "^1.1.11",

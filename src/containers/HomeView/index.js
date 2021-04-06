@@ -4,6 +4,7 @@ import { bindActionCreators }   from 'redux'
 import * as nameActionCreators  from 'core/actions/actions-name'
 import TextField                from '@material-ui/core/TextField'
 import Button                   from '@material-ui/core/Button'
+import PropTypes from 'prop-types'
 
 class HomeView extends Component {
   constructor(props) {
@@ -17,14 +18,12 @@ class HomeView extends Component {
   onSubmit = (evt) => {
     const { actions } = this.props
     const { name } = this.state
-
     actions.name.checkIfNameExists(name)
     evt.preventDefault()
   }
 
   handleChange = (evt) => {
     const { value } = evt.currentTarget
-
     this.setState({
       name: value
     })
@@ -33,6 +32,8 @@ class HomeView extends Component {
   render() {
     const { name } = this.state
     const { nameAlreadyExists } = this.props.name
+
+    // debugger
 
     return (
       <div className="container">
@@ -52,6 +53,13 @@ class HomeView extends Component {
       </div>
     )
   }
+}
+
+HomeView.propTypes = {
+  name: PropTypes.func.isRequired
+}
+HomeView.propTypes = {
+  actions: PropTypes.func.isRequired
 }
 
 function mapStateToProps(state) {

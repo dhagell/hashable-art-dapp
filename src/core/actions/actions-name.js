@@ -9,25 +9,27 @@ export function checkIfNameExists(name) {
 
     AmazingDappContract.setProvider(web3Provider.currentProvider)
     AmazingDappContract.defaults({ from: web3Provider.eth.defaultAccount })
+    // alert(AmazingDapp.contractName)
 
     return new Promise((resolve, reject) => {
       AmazingDappContract.deployed().then((ad) => {
-        return ad.checkIfExists(name)
+        return ad.checkIfExist(name)
       }).then((result) => {
         resolve(result)
+        reject(new Error('Error message!', result))
       })
     })
-    .then((result) => {
-      dispatch((() => {
-        return {
-          type: constants.CHECK_IF_NAME_EXISTS,
-          result
-        }
-      })())
-    })
-    .catch((error) =>{
-      console.log('error: ', error)
-    })
-
+      .then((result) => {
+        // debugger
+        dispatch((() => {
+          return {
+            type: constants.CHECK_IF_NAME_EXISTS,
+            result
+          }
+        })())
+      })
+      .catch((error) => {
+        console.log('error: ', error)
+      })
   }
 }

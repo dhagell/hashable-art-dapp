@@ -6,14 +6,13 @@ const initialState = {
 
 export function nameReducer(state = initialState, action) {
   switch (action.type) {
+    case constants.CHECK_IF_NAME_EXISTS:
+      // debugger
+      return Object.assign({}, state, {
+        nameAlreadyExists: action.result
+      })
 
-  case constants.CHECK_IF_NAME_EXISTS:
-    return Object.assign({}, state, {
-      nameAlreadyExists: action.result
-    })
-
-  default:
-    return state
+    default:
+      return state
   }
-
 }
