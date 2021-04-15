@@ -1,4 +1,4 @@
-pragma solidity ^0.5.0;
+pragma solidity 0.7.4;
 
 /**
  * This is a generic factory contract that can be used to mint tokens. The configuration
@@ -22,7 +22,7 @@ interface FactoryERC1155 {
     function numOptions() external view returns (uint256);
 
     /**
-     * @dev Returns whether the option ID can be minted. Can return false if the developer wishes to
+     * Returns whether the option ID can be minted. Can return false if the developer wishes to
      * restrict a total supply per option ID (or overall).
      */
     function canMint(uint256 _optionId, uint256 _amount)
@@ -31,7 +31,7 @@ interface FactoryERC1155 {
         returns (bool);
 
     /**
-     * @dev Returns a URL specifying some metadata about the option. This metadata can be of the
+     * Returns a URL specifying some metadata about the option. This metadata can be of the
      * same structure as the ERC1155 metadata.
      */
     function uri(uint256 _optionId) external view returns (string memory);

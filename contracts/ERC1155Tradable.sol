@@ -1,10 +1,10 @@
-pragma solidity ^0.5.12;
+// SPDX-License-Identifier: Apache-2.0
+pragma solidity 0.7.4;
 
-import "openzeppelin-solidity/contracts/ownership/Ownable.sol";
-import 'multi-token-standard/contracts/tokens/ERC1155/ERC1155.sol';
-import 'multi-token-standard/contracts/tokens/ERC1155/ERC1155Metadata.sol';
-import 'multi-token-standard/contracts/tokens/ERC1155/ERC1155MintBurn.sol';
-import "./Strings.sol";
+import "./utils/Ownable.sol";
+import './tokens/ERC1155/ERC1155.sol';
+import "./StringUtils.sol";
+
 
 contract OwnableDelegateProxy { }
 
@@ -17,8 +17,9 @@ contract ProxyRegistry {
  * ERC1155Tradable - ERC1155 contract that whitelists an operator address, has create and mint functionality, and supports useful standards from OpenZeppelin,
   like _exists(), name(), symbol(), and totalSupply()
  */
-contract ERC1155Tradable is ERC1155, ERC1155MintBurn, ERC1155Metadata, Ownable {
-  using Strings for string;
+contract ERC1155Tradable is  ERC1155,Ownable {
+  using StringUtils for string;
+  using SafeMath for uint256;
 
   address proxyRegistryAddress;
   mapping (uint256 => address) public creators;
@@ -57,16 +58,16 @@ contract ERC1155Tradable is ERC1155, ERC1155MintBurn, ERC1155Metadata, Ownable {
 
   function uri(
     uint256 _id
-  ) public view returns (string memory) {
+  ) public view override virtual returns (string memory) {
     require(_exists(_id), "ERC1155Tradable#uri: NONEXISTENT_TOKEN");
     // We have to convert string to bytes to check for existence
     bytes memory customUriBytes = bytes(customUri[_id]);
     if (customUriBytes.length > 0) {
         return customUri[_id];
     } else {
-        return Strings.strConcat(
+        return StringUtils.strConcat(
             baseMetadataURI,
-            Strings.uint2str(_id)
+            StringUtils.uint2str(_id)
         );
     }
   }
@@ -156,7 +157,7 @@ contract ERC1155Tradable is ERC1155, ERC1155MintBurn, ERC1155Metadata, Ownable {
     uint256 _id,
     uint256 _quantity,
     bytes memory _data
-  ) public creatorOnly(_id) {
+  ) public virtual creatorOnly(_id) {
     _mint(_to, _id, _quantity, _data);
     tokenSupply[_id] = tokenSupply[_id].add(_quantity);
   }
@@ -205,7 +206,7 @@ contract ERC1155Tradable is ERC1155, ERC1155MintBurn, ERC1155Metadata, Ownable {
   function isApprovedForAll(
     address _owner,
     address _operator
-  ) public view returns (bool isOperator) {
+  ) public override view returns (bool isOperator) {
     // Whitelist OpenSea proxy contract for easy trading.
     ProxyRegistry proxyRegistry = ProxyRegistry(proxyRegistryAddress);
     if (address(proxyRegistry.proxies(_owner)) == _operator) {
@@ -215,6 +216,7 @@ contract ERC1155Tradable is ERC1155, ERC1155MintBurn, ERC1155Metadata, Ownable {
     return ERC1155.isApprovedForAll(_owner, _operator);
   }
 
+  
   /**
     * @dev Change the creator address for given token
     * @param _to   Address of the new creator
@@ -225,6 +227,7 @@ contract ERC1155Tradable is ERC1155, ERC1155MintBurn, ERC1155Metadata, Ownable {
       creators[_id] = _to;
   }
 
+  
   /**
     * @dev Returns whether the specified token exists by checking to see if it has a creator
     * @param _id uint256 ID of the token to query the existence of
@@ -241,4 +244,5 @@ contract ERC1155Tradable is ERC1155, ERC1155MintBurn, ERC1155Metadata, Ownable {
   ) external view returns (bool) {
     return _exists(_id);
   }
+
 }

@@ -11,5 +11,11 @@ module.exports = {
       gas: 5500000,        
     }
   },
-  migrations_directory: "./migrations"
+  migrations_directory: "./migrations",
+  compilers: {
+    solc: {
+      version: "0.7.4",    // Fetch exact version from solc-bin (default: truffle's version)
+      // docker: false        // Use "0.5.1" you've installed locally with docker (default: false)
+    }
+  }
 };

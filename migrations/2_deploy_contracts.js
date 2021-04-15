@@ -1,24 +1,24 @@
-console.log("Setting up Contracts.");
-const Pirate = artifacts.require("./Pirate.sol");
-const PirateFactory = artifacts.require("./PirateFactory.sol");
-const PirateBootyBox = artifacts.require("./PirateBootyBox.sol");
-const PirateTreasure = artifacts.require("../contracts/PirateTreasure.sol");
-const PirateTreasureFactory = artifacts.require("../contracts/PirateTreasureFactory.sol");
-const PirateTreasureBootyBox = artifacts.require("../contracts/PirateTreasureBootyBox.sol");
-const BootyBoxRandomness = artifacts.require("../contracts/BootyBoxRandomness.sol");
+// ERC721
+//const hashartERC721 = artifacts.require("./hashartERC721.sol");
+//const ERC721Factory = artifacts.require("./ERC721Factory.sol");
+//const ERC721Collection = artifacts.require("./ERC721Collection.sol");
+// ERC1155
+const hashartERC1155 = artifacts.require("../contracts/hashartERC1155.sol");
+//const ERC1155Factory = artifacts.require("../contracts/ERC1155Factory.sol");
+//const ERC1155Collection = artifacts.require("../contracts/ERC1155Collection.sol");
+//const CollectionRandomness = artifacts.require("../contracts/CollectionRandomness.sol");
 
-console.log("Setting up Treasures.");
-const setupPirateTreasures = require("../lib/setupPirateTreasures.js");
+const setupERC1155 = require("../lib/setupERC1155.js");
 
 // If you want to hardcode what deploys, comment out process.env.X and use
 // true/false;
 const DEPLOY_ALL = process.env.DEPLOY_ALL;
-const DEPLOY_TREASURES_SALE = process.env.DEPLOY_TREASURES_SALE || DEPLOY_ALL;
-const DEPLOY_TREASURES = process.env.DEPLOY_TREASURES || DEPLOY_TREASURES_SALE || DEPLOY_ALL;
-const DEPLOY_PIRATES_SALE = process.env.DEPLOY_PIRATES_SALE || DEPLOY_ALL;
-// Note that we will default to this unless DEPLOY_TREASURES is set.
+const DEPLOY_ERC1155_SALE = process.env.DEPLOY_ERC1155_SALE || DEPLOY_ALL;
+const DEPLOY_ERC1155 = process.env.DEPLOY_ERC1155 || DEPLOY_ERC1155_SALE || DEPLOY_ALL;
+const DEPLOY_CREATURES_SALE = process.env.DEPLOY_CREATURES_SALE || DEPLOY_ALL;
+// Note that we will default to this unless DEPLOY_ERC1155 is set.
 // This is to keep the historical behavior of this migration.
-const DEPLOY_PIRATES = process.env.DEPLOY_PIRATES || DEPLOY_PIRATES_SALE || DEPLOY_ALL || (! DEPLOY_TREASURES);
+const DEPLOY_CREATURES = process.env.DEPLOY_CREATURES || DEPLOY_CREATURES_SALE || DEPLOY_ALL || (! DEPLOY_ERC1155);
 
 module.exports = async (deployer, network, addresses) => {
   // OpenSea proxy registry addresses for rinkeby and mainnet.
@@ -28,57 +28,57 @@ module.exports = async (deployer, network, addresses) => {
   } else {
     proxyRegistryAddress = "0xa5409ec958c83c3f309868babaca7c86dcb077c1";
   }
-   console.log("Deploying Pirates.");
-
-  if (DEPLOY_PIRATES) {
-    await deployer.deploy(Pirate, proxyRegistryAddress, {gas: 5000000});
+/*
+  if (DEPLOY_CREATURES) {
+    await deployer.deploy(hashartERC721, proxyRegistryAddress, {gas: 5000000});
   }
 
-  if (DEPLOY_PIRATES_SALE) {
-    await deployer.deploy(PirateFactory, proxyRegistryAddress, Pirate.address, {gas: 7000000});
-    const pirate = await Pirate.deployed();
-    await pirate.transferOwnership(PirateFactory.address);
+  if (DEPLOY_CREATURES_SALE) {
+    await deployer.deploy(ERC721Factory, proxyRegistryAddress, hashartERC721.address, {gas: 7000000});
+    const creature = await hashartERC721.deployed();
+    await creature.transferOwnership(ERC721Factory.address);
   }
-
-  if (DEPLOY_TREASURES) {
+*/
+  if (DEPLOY_ERC1155) {
     await deployer.deploy(
-      PirateTreasure,
+      hashartERC1155,
       proxyRegistryAddress,
       { gas: 5000000 }
     );
-    const treasures = await PirateTreasure.deployed();
-    await setupPirateTreasures.setupTreasure(
-      treasures,
+    const accessories = await hashartERC1155.deployed();
+    await setupERC1155.setupAccessory(
+      accessories,
       addresses[0]
     );
   }
-
-  if (DEPLOY_TREASURES_SALE) {
-    await deployer.deploy(BootyBoxRandomness);
-    await deployer.link(BootyBoxRandomness, PirateTreasureBootyBox);
+/*
+  if (DEPLOY_ERC1155_SALE) {
+    await deployer.deploy(CollectionRandomness);
+    await deployer.link(CollectionRandomness, ERC1155Collection);
     await deployer.deploy(
-      PirateTreasureBootyBox,
+      ERC1155Collection,
       proxyRegistryAddress,
       { gas: 6721975 }
     );
-    const bootyBox = await PirateTreasureBootyBox.deployed();
+    const collection = await ERC1155Collection.deployed();
     await deployer.deploy(
-      PirateTreasureFactory,
+      ERC1155Factory,
       proxyRegistryAddress,
-      PirateTreasure.address,
-      PirateTreasureBootyBox.address,
+      hashartERC1155.address,
+      ERC1155Collection.address,
       { gas: 5000000 }
     );
-    const treasures = await PirateTreasure.deployed();
-    const factory = await PirateTreasureFactory.deployed();
-    await treasures.setApprovalForAll(
+    const accessories = await hashartERC1155.deployed();
+    const factory = await ERC1155Factory.deployed();
+    await accessories.setApprovalForAll(
       addresses[0],
-      PirateTreasureFactory.address
+      ERC1155Factory.address
     );
-    await treasures.transferOwnership(
-      PirateTreasureFactory.address
+    await accessories.transferOwnership(
+      ERC1155Factory.address
     );
-    await setupPirateTreasures.setupTreasureBootyBox(bootyBox, factory);
-    await bootyBox.transferOwnership(factory.address);
+    await setupERC1155.setupERC1155Collection(collection, factory);
+    await collection.transferOwnership(factory.address);
   }
+ */
 };
