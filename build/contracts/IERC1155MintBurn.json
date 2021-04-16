@@ -1,0 +1,1413 @@
+{
+  "contractName": "IERC1155MintBurn",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_id",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes",
+          "name": "_data",
+          "type": "bytes"
+        }
+      ],
+      "name": "mint",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "_ids",
+          "type": "uint256[]"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "_amounts",
+          "type": "uint256[]"
+        },
+        {
+          "internalType": "bytes",
+          "name": "_data",
+          "type": "bytes"
+        }
+      ],
+      "name": "batchMint",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_id",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "burn",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "_ids",
+          "type": "uint256[]"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "_amounts",
+          "type": "uint256[]"
+        }
+      ],
+      "name": "batchBurn",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.7.4+commit.3f05b770\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_from\",\"type\":\"address\"},{\"internalType\":\"uint256[]\",\"name\":\"_ids\",\"type\":\"uint256[]\"},{\"internalType\":\"uint256[]\",\"name\":\"_amounts\",\"type\":\"uint256[]\"}],\"name\":\"batchBurn\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"},{\"internalType\":\"uint256[]\",\"name\":\"_ids\",\"type\":\"uint256[]\"},{\"internalType\":\"uint256[]\",\"name\":\"_amounts\",\"type\":\"uint256[]\"},{\"internalType\":\"bytes\",\"name\":\"_data\",\"type\":\"bytes\"}],\"name\":\"batchMint\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_from\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_id\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"burn\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_id\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"_data\",\"type\":\"bytes\"}],\"name\":\"mint\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"batchBurn(address,uint256[],uint256[])\":{\"params\":{\"_amounts\":\"Array of the amount to be burned\",\"_from\":\"The address to burn tokens from\",\"_ids\":\"Array of token ids to burn\"}},\"batchMint(address,uint256[],uint256[],bytes)\":{\"details\":\"Mint tokens for each ids in _ids\",\"params\":{\"_amounts\":\"Array of amount of tokens to mint per id\",\"_data\":\"Byte array of data to pass to recipient if it's a contract\",\"_ids\":\"Array of ids to mint\",\"_to\":\"The address to mint tokens to.\"}},\"burn(address,uint256,uint256)\":{\"params\":{\"_amount\":\"The amount to be burned\",\"_from\":\"The address to burn tokens from\",\"_id\":\"Token id to burn\"}},\"mint(address,uint256,uint256,bytes)\":{\"details\":\"Mint _amount of tokens of a given id if not frozen and if max supply not exceeded\",\"params\":{\"_amount\":\"The amount to be minted\",\"_data\":\"Byte array of data to pass to recipient if it's a contract\",\"_id\":\"Token id to mint\",\"_to\":\"The address to mint tokens to.\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"batchBurn(address,uint256[],uint256[])\":{\"notice\":\"Burn tokens of given token id for each (_ids[i], _amounts[i]) pair\"},\"burn(address,uint256,uint256)\":{\"notice\":\"Burn _amount of tokens of a given token id\"}},\"notice\":\"Recommended interface for public facing minting and burning functions. These public methods should have restricted access.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"/D/Apps/hashable-art-dapp/contracts/interfaces/IERC1155MintBurn.sol\":\"IERC1155MintBurn\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/D/Apps/hashable-art-dapp/contracts/interfaces/IERC1155MintBurn.sol\":{\"keccak256\":\"0x1338a91c283af87c4fbc0ef3181a54e2d804d51750628314c0c6cb63d53ba9e1\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://19036f2d67ad592f879830f0972b246252158e7c16b6de792c1e4ea3b730f167\",\"dweb:/ipfs/QmcJR8kCWgvsYk5PbSquQNXUUa47ptKrDoUE1eJoTirCYt\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: Apache-2.0\npragma solidity 0.7.4;\n\n/**\n * Recommended interface for public facing minting and burning functions.\n * These public methods should have restricted access.\n */\ninterface IERC1155MintBurn {\n\n  /***************************************|\n  |        Public Minting Functions       |\n  |______________________________________*/\n\n  /**\n   * @dev Mint _amount of tokens of a given id if not frozen and if max supply not exceeded\n   * @param _to     The address to mint tokens to.\n   * @param _id     Token id to mint\n   * @param _amount The amount to be minted\n   * @param _data   Byte array of data to pass to recipient if it's a contract\n   */\n  function mint(address _to, uint256 _id, uint256 _amount, bytes calldata _data) external;\n\n  /**\n   * @dev Mint tokens for each ids in _ids\n   * @param _to      The address to mint tokens to.\n   * @param _ids     Array of ids to mint\n   * @param _amounts Array of amount of tokens to mint per id\n   * @param _data    Byte array of data to pass to recipient if it's a contract\n   */\n  function batchMint(address _to, uint256[] calldata _ids, uint256[] calldata _amounts, bytes calldata _data) external;\n\n\n  /***************************************|\n  |        Public Minting Functions       |\n  |______________________________________*/\n\n  /**\n   * @notice Burn _amount of tokens of a given token id\n   * @param _from    The address to burn tokens from\n   * @param _id      Token id to burn\n   * @param _amount  The amount to be burned\n   */\n  function burn(address _from, uint256 _id, uint256 _amount) external;\n\n  /**\n   * @notice Burn tokens of given token id for each (_ids[i], _amounts[i]) pair\n   * @param _from     The address to burn tokens from\n   * @param _ids      Array of token ids to burn\n   * @param _amounts  Array of the amount to be burned\n   */\n  function batchBurn(address _from, uint256[] calldata _ids, uint256[] calldata _amounts) external;\n}\n",
+  "sourcePath": "D:/Apps/hashable-art-dapp/contracts/interfaces/IERC1155MintBurn.sol",
+  "ast": {
+    "absolutePath": "/D/Apps/hashable-art-dapp/contracts/interfaces/IERC1155MintBurn.sol",
+    "exportedSymbols": {
+      "IERC1155MintBurn": [
+        1294
+      ]
+    },
+    "id": 1295,
+    "license": "Apache-2.0",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1244,
+        "literals": [
+          "solidity",
+          "0.7",
+          ".4"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "39:22:44"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 1245,
+          "nodeType": "StructuredDocumentation",
+          "src": "63:136:44",
+          "text": " Recommended interface for public facing minting and burning functions.\n These public methods should have restricted access."
+        },
+        "fullyImplemented": false,
+        "id": 1294,
+        "linearizedBaseContracts": [
+          1294
+        ],
+        "name": "IERC1155MintBurn",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 1246,
+              "nodeType": "StructuredDocumentation",
+              "src": "365:312:44",
+              "text": " @dev Mint _amount of tokens of a given id if not frozen and if max supply not exceeded\n @param _to     The address to mint tokens to.\n @param _id     Token id to mint\n @param _amount The amount to be minted\n @param _data   Byte array of data to pass to recipient if it's a contract"
+            },
+            "functionSelector": "731133e9",
+            "id": 1257,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "mint",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1255,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1248,
+                  "mutability": "mutable",
+                  "name": "_to",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1257,
+                  "src": "694:11:44",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1247,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "694:7:44",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1250,
+                  "mutability": "mutable",
+                  "name": "_id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1257,
+                  "src": "707:11:44",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1249,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "707:7:44",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1252,
+                  "mutability": "mutable",
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1257,
+                  "src": "720:15:44",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1251,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "720:7:44",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1254,
+                  "mutability": "mutable",
+                  "name": "_data",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1257,
+                  "src": "737:20:44",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 1253,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "737:5:44",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "693:65:44"
+            },
+            "returnParameters": {
+              "id": 1256,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "767:0:44"
+            },
+            "scope": 1294,
+            "src": "680:88:44",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 1258,
+              "nodeType": "StructuredDocumentation",
+              "src": "772:288:44",
+              "text": " @dev Mint tokens for each ids in _ids\n @param _to      The address to mint tokens to.\n @param _ids     Array of ids to mint\n @param _amounts Array of amount of tokens to mint per id\n @param _data    Byte array of data to pass to recipient if it's a contract"
+            },
+            "functionSelector": "b48ab8b6",
+            "id": 1271,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "batchMint",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1269,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1260,
+                  "mutability": "mutable",
+                  "name": "_to",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1271,
+                  "src": "1082:11:44",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1259,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1082:7:44",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1263,
+                  "mutability": "mutable",
+                  "name": "_ids",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1271,
+                  "src": "1095:23:44",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_calldata_ptr",
+                    "typeString": "uint256[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 1261,
+                      "name": "uint256",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "1095:7:44",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 1262,
+                    "nodeType": "ArrayTypeName",
+                    "src": "1095:9:44",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                      "typeString": "uint256[]"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1266,
+                  "mutability": "mutable",
+                  "name": "_amounts",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1271,
+                  "src": "1120:27:44",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_calldata_ptr",
+                    "typeString": "uint256[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 1264,
+                      "name": "uint256",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "1120:7:44",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 1265,
+                    "nodeType": "ArrayTypeName",
+                    "src": "1120:9:44",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                      "typeString": "uint256[]"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1268,
+                  "mutability": "mutable",
+                  "name": "_data",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1271,
+                  "src": "1149:20:44",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 1267,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1149:5:44",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1081:89:44"
+            },
+            "returnParameters": {
+              "id": 1270,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1179:0:44"
+            },
+            "scope": 1294,
+            "src": "1063:117:44",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 1272,
+              "nodeType": "StructuredDocumentation",
+              "src": "1318:201:44",
+              "text": " @notice Burn _amount of tokens of a given token id\n @param _from    The address to burn tokens from\n @param _id      Token id to burn\n @param _amount  The amount to be burned"
+            },
+            "functionSelector": "f5298aca",
+            "id": 1281,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "burn",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1279,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1274,
+                  "mutability": "mutable",
+                  "name": "_from",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1281,
+                  "src": "1536:13:44",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1273,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1536:7:44",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1276,
+                  "mutability": "mutable",
+                  "name": "_id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1281,
+                  "src": "1551:11:44",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1275,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1551:7:44",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1278,
+                  "mutability": "mutable",
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1281,
+                  "src": "1564:15:44",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1277,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1564:7:44",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1535:45:44"
+            },
+            "returnParameters": {
+              "id": 1280,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1589:0:44"
+            },
+            "scope": 1294,
+            "src": "1522:68:44",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 1282,
+              "nodeType": "StructuredDocumentation",
+              "src": "1594:247:44",
+              "text": " @notice Burn tokens of given token id for each (_ids[i], _amounts[i]) pair\n @param _from     The address to burn tokens from\n @param _ids      Array of token ids to burn\n @param _amounts  Array of the amount to be burned"
+            },
+            "functionSelector": "f6eb127a",
+            "id": 1293,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "batchBurn",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1291,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1284,
+                  "mutability": "mutable",
+                  "name": "_from",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1293,
+                  "src": "1863:13:44",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1283,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1863:7:44",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1287,
+                  "mutability": "mutable",
+                  "name": "_ids",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1293,
+                  "src": "1878:23:44",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_calldata_ptr",
+                    "typeString": "uint256[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 1285,
+                      "name": "uint256",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "1878:7:44",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 1286,
+                    "nodeType": "ArrayTypeName",
+                    "src": "1878:9:44",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                      "typeString": "uint256[]"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1290,
+                  "mutability": "mutable",
+                  "name": "_amounts",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1293,
+                  "src": "1903:27:44",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_calldata_ptr",
+                    "typeString": "uint256[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 1288,
+                      "name": "uint256",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "1903:7:44",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 1289,
+                    "nodeType": "ArrayTypeName",
+                    "src": "1903:9:44",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                      "typeString": "uint256[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1862:69:44"
+            },
+            "returnParameters": {
+              "id": 1292,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1940:0:44"
+            },
+            "scope": 1294,
+            "src": "1844:97:44",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 1295,
+        "src": "200:1743:44"
+      }
+    ],
+    "src": "39:1905:44"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/D/Apps/hashable-art-dapp/contracts/interfaces/IERC1155MintBurn.sol",
+      "exportedSymbols": {
+        "IERC1155MintBurn": [
+          1294
+        ]
+      },
+      "license": "Apache-2.0"
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "0.7",
+            ".4"
+          ]
+        },
+        "id": 1244,
+        "name": "PragmaDirective",
+        "src": "39:22:44"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "interface",
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            1294
+          ],
+          "name": "IERC1155MintBurn",
+          "scope": 1295
+        },
+        "children": [
+          {
+            "attributes": {
+              "text": " Recommended interface for public facing minting and burning functions.\n These public methods should have restricted access."
+            },
+            "id": 1245,
+            "name": "StructuredDocumentation",
+            "src": "63:136:44"
+          },
+          {
+            "attributes": {
+              "functionSelector": "731133e9",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "mint",
+              "scope": 1294,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": " @dev Mint _amount of tokens of a given id if not frozen and if max supply not exceeded\n @param _to     The address to mint tokens to.\n @param _id     Token id to mint\n @param _amount The amount to be minted\n @param _data   Byte array of data to pass to recipient if it's a contract"
+                },
+                "id": 1246,
+                "name": "StructuredDocumentation",
+                "src": "365:312:44"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_to",
+                      "scope": 1257,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 1247,
+                        "name": "ElementaryTypeName",
+                        "src": "694:7:44"
+                      }
+                    ],
+                    "id": 1248,
+                    "name": "VariableDeclaration",
+                    "src": "694:11:44"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_id",
+                      "scope": 1257,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 1249,
+                        "name": "ElementaryTypeName",
+                        "src": "707:7:44"
+                      }
+                    ],
+                    "id": 1250,
+                    "name": "VariableDeclaration",
+                    "src": "707:11:44"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_amount",
+                      "scope": 1257,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 1251,
+                        "name": "ElementaryTypeName",
+                        "src": "720:7:44"
+                      }
+                    ],
+                    "id": 1252,
+                    "name": "VariableDeclaration",
+                    "src": "720:15:44"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_data",
+                      "scope": 1257,
+                      "stateVariable": false,
+                      "storageLocation": "calldata",
+                      "type": "bytes",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes",
+                          "type": "bytes"
+                        },
+                        "id": 1253,
+                        "name": "ElementaryTypeName",
+                        "src": "737:5:44"
+                      }
+                    ],
+                    "id": 1254,
+                    "name": "VariableDeclaration",
+                    "src": "737:20:44"
+                  }
+                ],
+                "id": 1255,
+                "name": "ParameterList",
+                "src": "693:65:44"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 1256,
+                "name": "ParameterList",
+                "src": "767:0:44"
+              }
+            ],
+            "id": 1257,
+            "name": "FunctionDefinition",
+            "src": "680:88:44"
+          },
+          {
+            "attributes": {
+              "functionSelector": "b48ab8b6",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "batchMint",
+              "scope": 1294,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": " @dev Mint tokens for each ids in _ids\n @param _to      The address to mint tokens to.\n @param _ids     Array of ids to mint\n @param _amounts Array of amount of tokens to mint per id\n @param _data    Byte array of data to pass to recipient if it's a contract"
+                },
+                "id": 1258,
+                "name": "StructuredDocumentation",
+                "src": "772:288:44"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_to",
+                      "scope": 1271,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 1259,
+                        "name": "ElementaryTypeName",
+                        "src": "1082:7:44"
+                      }
+                    ],
+                    "id": 1260,
+                    "name": "VariableDeclaration",
+                    "src": "1082:11:44"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_ids",
+                      "scope": 1271,
+                      "stateVariable": false,
+                      "storageLocation": "calldata",
+                      "type": "uint256[]",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "type": "uint256[]"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "uint256",
+                              "type": "uint256"
+                            },
+                            "id": 1261,
+                            "name": "ElementaryTypeName",
+                            "src": "1095:7:44"
+                          }
+                        ],
+                        "id": 1262,
+                        "name": "ArrayTypeName",
+                        "src": "1095:9:44"
+                      }
+                    ],
+                    "id": 1263,
+                    "name": "VariableDeclaration",
+                    "src": "1095:23:44"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_amounts",
+                      "scope": 1271,
+                      "stateVariable": false,
+                      "storageLocation": "calldata",
+                      "type": "uint256[]",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "type": "uint256[]"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "uint256",
+                              "type": "uint256"
+                            },
+                            "id": 1264,
+                            "name": "ElementaryTypeName",
+                            "src": "1120:7:44"
+                          }
+                        ],
+                        "id": 1265,
+                        "name": "ArrayTypeName",
+                        "src": "1120:9:44"
+                      }
+                    ],
+                    "id": 1266,
+                    "name": "VariableDeclaration",
+                    "src": "1120:27:44"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_data",
+                      "scope": 1271,
+                      "stateVariable": false,
+                      "storageLocation": "calldata",
+                      "type": "bytes",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes",
+                          "type": "bytes"
+                        },
+                        "id": 1267,
+                        "name": "ElementaryTypeName",
+                        "src": "1149:5:44"
+                      }
+                    ],
+                    "id": 1268,
+                    "name": "VariableDeclaration",
+                    "src": "1149:20:44"
+                  }
+                ],
+                "id": 1269,
+                "name": "ParameterList",
+                "src": "1081:89:44"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 1270,
+                "name": "ParameterList",
+                "src": "1179:0:44"
+              }
+            ],
+            "id": 1271,
+            "name": "FunctionDefinition",
+            "src": "1063:117:44"
+          },
+          {
+            "attributes": {
+              "functionSelector": "f5298aca",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "burn",
+              "scope": 1294,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": " @notice Burn _amount of tokens of a given token id\n @param _from    The address to burn tokens from\n @param _id      Token id to burn\n @param _amount  The amount to be burned"
+                },
+                "id": 1272,
+                "name": "StructuredDocumentation",
+                "src": "1318:201:44"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_from",
+                      "scope": 1281,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 1273,
+                        "name": "ElementaryTypeName",
+                        "src": "1536:7:44"
+                      }
+                    ],
+                    "id": 1274,
+                    "name": "VariableDeclaration",
+                    "src": "1536:13:44"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_id",
+                      "scope": 1281,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 1275,
+                        "name": "ElementaryTypeName",
+                        "src": "1551:7:44"
+                      }
+                    ],
+                    "id": 1276,
+                    "name": "VariableDeclaration",
+                    "src": "1551:11:44"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_amount",
+                      "scope": 1281,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 1277,
+                        "name": "ElementaryTypeName",
+                        "src": "1564:7:44"
+                      }
+                    ],
+                    "id": 1278,
+                    "name": "VariableDeclaration",
+                    "src": "1564:15:44"
+                  }
+                ],
+                "id": 1279,
+                "name": "ParameterList",
+                "src": "1535:45:44"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 1280,
+                "name": "ParameterList",
+                "src": "1589:0:44"
+              }
+            ],
+            "id": 1281,
+            "name": "FunctionDefinition",
+            "src": "1522:68:44"
+          },
+          {
+            "attributes": {
+              "functionSelector": "f6eb127a",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "batchBurn",
+              "scope": 1294,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": " @notice Burn tokens of given token id for each (_ids[i], _amounts[i]) pair\n @param _from     The address to burn tokens from\n @param _ids      Array of token ids to burn\n @param _amounts  Array of the amount to be burned"
+                },
+                "id": 1282,
+                "name": "StructuredDocumentation",
+                "src": "1594:247:44"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_from",
+                      "scope": 1293,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 1283,
+                        "name": "ElementaryTypeName",
+                        "src": "1863:7:44"
+                      }
+                    ],
+                    "id": 1284,
+                    "name": "VariableDeclaration",
+                    "src": "1863:13:44"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_ids",
+                      "scope": 1293,
+                      "stateVariable": false,
+                      "storageLocation": "calldata",
+                      "type": "uint256[]",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "type": "uint256[]"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "uint256",
+                              "type": "uint256"
+                            },
+                            "id": 1285,
+                            "name": "ElementaryTypeName",
+                            "src": "1878:7:44"
+                          }
+                        ],
+                        "id": 1286,
+                        "name": "ArrayTypeName",
+                        "src": "1878:9:44"
+                      }
+                    ],
+                    "id": 1287,
+                    "name": "VariableDeclaration",
+                    "src": "1878:23:44"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_amounts",
+                      "scope": 1293,
+                      "stateVariable": false,
+                      "storageLocation": "calldata",
+                      "type": "uint256[]",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "type": "uint256[]"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "uint256",
+                              "type": "uint256"
+                            },
+                            "id": 1288,
+                            "name": "ElementaryTypeName",
+                            "src": "1903:7:44"
+                          }
+                        ],
+                        "id": 1289,
+                        "name": "ArrayTypeName",
+                        "src": "1903:9:44"
+                      }
+                    ],
+                    "id": 1290,
+                    "name": "VariableDeclaration",
+                    "src": "1903:27:44"
+                  }
+                ],
+                "id": 1291,
+                "name": "ParameterList",
+                "src": "1862:69:44"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 1292,
+                "name": "ParameterList",
+                "src": "1940:0:44"
+              }
+            ],
+            "id": 1293,
+            "name": "FunctionDefinition",
+            "src": "1844:97:44"
+          }
+        ],
+        "id": 1294,
+        "name": "ContractDefinition",
+        "src": "200:1743:44"
+      }
+    ],
+    "id": 1295,
+    "name": "SourceUnit",
+    "src": "39:1905:44"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.7.4+commit.3f05b770.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.3.4",
+  "updatedAt": "2021-04-09T00:53:41.768Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "batchBurn(address,uint256[],uint256[])": {
+        "params": {
+          "_amounts": "Array of the amount to be burned",
+          "_from": "The address to burn tokens from",
+          "_ids": "Array of token ids to burn"
+        }
+      },
+      "batchMint(address,uint256[],uint256[],bytes)": {
+        "details": "Mint tokens for each ids in _ids",
+        "params": {
+          "_amounts": "Array of amount of tokens to mint per id",
+          "_data": "Byte array of data to pass to recipient if it's a contract",
+          "_ids": "Array of ids to mint",
+          "_to": "The address to mint tokens to."
+        }
+      },
+      "burn(address,uint256,uint256)": {
+        "params": {
+          "_amount": "The amount to be burned",
+          "_from": "The address to burn tokens from",
+          "_id": "Token id to burn"
+        }
+      },
+      "mint(address,uint256,uint256,bytes)": {
+        "details": "Mint _amount of tokens of a given id if not frozen and if max supply not exceeded",
+        "params": {
+          "_amount": "The amount to be minted",
+          "_data": "Byte array of data to pass to recipient if it's a contract",
+          "_id": "Token id to mint",
+          "_to": "The address to mint tokens to."
+        }
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "batchBurn(address,uint256[],uint256[])": {
+        "notice": "Burn tokens of given token id for each (_ids[i], _amounts[i]) pair"
+      },
+      "burn(address,uint256,uint256)": {
+        "notice": "Burn _amount of tokens of a given token id"
+      }
+    },
+    "notice": "Recommended interface for public facing minting and burning functions. These public methods should have restricted access.",
+    "version": 1
+  }
+}

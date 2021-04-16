@@ -1,0 +1,512 @@
+{
+  "contractName": "ERC165",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "bytes4",
+          "name": "_interfaceID",
+          "type": "bytes4"
+        }
+      ],
+      "name": "supportsInterface",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.7.4+commit.3f05b770\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"_interfaceID\",\"type\":\"bytes4\"}],\"name\":\"supportsInterface\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"pure\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"supportsInterface(bytes4)\":{\"params\":{\"_interfaceID\":\"The interface identifier, as specified in ERC-165\"},\"returns\":{\"_0\":\"`true` if the contract implements `_interfaceID`\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"supportsInterface(bytes4)\":{\"notice\":\"Query if a contract implements an interface\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/D/Apps/hashable-art-dapp/contracts/utils/ERC165.sol\":\"ERC165\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/D/Apps/hashable-art-dapp/contracts/utils/ERC165.sol\":{\"keccak256\":\"0x81f75e23be623d10c92c5a4feee320d5a082f2f33fcad7b9942fc9843bfa6583\",\"urls\":[\"bzz-raw://e61e07d8c8910e2a460ab98e34a1f380b90ee26ad7ae71b0b8eb36ed01131b61\",\"dweb:/ipfs/Qmes1Eeea8CnSDnDg99N4WKrcMDRaRfsMECcDLyLm3eUFv\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity 0.7.4;\n\nabstract contract ERC165 {\n  /**\n   * @notice Query if a contract implements an interface\n   * @param _interfaceID The interface identifier, as specified in ERC-165\n   * @return `true` if the contract implements `_interfaceID`\n   */\n  function supportsInterface(bytes4 _interfaceID) virtual public pure returns (bool) {\n    return _interfaceID == this.supportsInterface.selector;\n  }\n}",
+  "sourcePath": "D:/Apps/hashable-art-dapp/contracts/utils/ERC165.sol",
+  "ast": {
+    "absolutePath": "/D/Apps/hashable-art-dapp/contracts/utils/ERC165.sol",
+    "exportedSymbols": {
+      "ERC165": [
+        308
+      ]
+    },
+    "id": 309,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 292,
+        "literals": [
+          "solidity",
+          "0.7",
+          ".4"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:22:52"
+      },
+      {
+        "abstract": true,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 308,
+        "linearizedBaseContracts": [
+          308
+        ],
+        "name": "ERC165",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 306,
+              "nodeType": "Block",
+              "src": "342:65:52",
+              "statements": [
+                {
+                  "expression": {
+                    "commonType": {
+                      "typeIdentifier": "t_bytes4",
+                      "typeString": "bytes4"
+                    },
+                    "id": 304,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "id": 300,
+                      "name": "_interfaceID",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 295,
+                      "src": "355:12:52",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes4",
+                        "typeString": "bytes4"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "==",
+                    "rightExpression": {
+                      "expression": {
+                        "expression": {
+                          "id": 301,
+                          "name": "this",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": -28,
+                          "src": "371:4:52",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_ERC165_$308",
+                            "typeString": "contract ERC165"
+                          }
+                        },
+                        "id": 302,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "supportsInterface",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 307,
+                        "src": "371:22:52",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_external_pure$_t_bytes4_$returns$_t_bool_$",
+                          "typeString": "function (bytes4) pure external returns (bool)"
+                        }
+                      },
+                      "id": 303,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberName": "selector",
+                      "nodeType": "MemberAccess",
+                      "src": "371:31:52",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes4",
+                        "typeString": "bytes4"
+                      }
+                    },
+                    "src": "355:47:52",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 299,
+                  "id": 305,
+                  "nodeType": "Return",
+                  "src": "348:54:52"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 293,
+              "nodeType": "StructuredDocumentation",
+              "src": "53:203:52",
+              "text": " @notice Query if a contract implements an interface\n @param _interfaceID The interface identifier, as specified in ERC-165\n @return `true` if the contract implements `_interfaceID`"
+            },
+            "functionSelector": "01ffc9a7",
+            "id": 307,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "supportsInterface",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 296,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 295,
+                  "mutability": "mutable",
+                  "name": "_interfaceID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 307,
+                  "src": "286:19:52",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes4",
+                    "typeString": "bytes4"
+                  },
+                  "typeName": {
+                    "id": 294,
+                    "name": "bytes4",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "286:6:52",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes4",
+                      "typeString": "bytes4"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "285:21:52"
+            },
+            "returnParameters": {
+              "id": 299,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 298,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 307,
+                  "src": "336:4:52",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 297,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "336:4:52",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "335:6:52"
+            },
+            "scope": 308,
+            "src": "259:148:52",
+            "stateMutability": "pure",
+            "virtual": true,
+            "visibility": "public"
+          }
+        ],
+        "scope": 309,
+        "src": "24:385:52"
+      }
+    ],
+    "src": "0:409:52"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/D/Apps/hashable-art-dapp/contracts/utils/ERC165.sol",
+      "exportedSymbols": {
+        "ERC165": [
+          308
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "0.7",
+            ".4"
+          ]
+        },
+        "id": 292,
+        "name": "PragmaDirective",
+        "src": "0:22:52"
+      },
+      {
+        "attributes": {
+          "abstract": true,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            308
+          ],
+          "name": "ERC165",
+          "scope": 309
+        },
+        "children": [
+          {
+            "attributes": {
+              "functionSelector": "01ffc9a7",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "supportsInterface",
+              "scope": 308,
+              "stateMutability": "pure",
+              "virtual": true,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": " @notice Query if a contract implements an interface\n @param _interfaceID The interface identifier, as specified in ERC-165\n @return `true` if the contract implements `_interfaceID`"
+                },
+                "id": 293,
+                "name": "StructuredDocumentation",
+                "src": "53:203:52"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_interfaceID",
+                      "scope": 307,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bytes4",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes4",
+                          "type": "bytes4"
+                        },
+                        "id": 294,
+                        "name": "ElementaryTypeName",
+                        "src": "286:6:52"
+                      }
+                    ],
+                    "id": 295,
+                    "name": "VariableDeclaration",
+                    "src": "286:19:52"
+                  }
+                ],
+                "id": 296,
+                "name": "ParameterList",
+                "src": "285:21:52"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "scope": 307,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 297,
+                        "name": "ElementaryTypeName",
+                        "src": "336:4:52"
+                      }
+                    ],
+                    "id": 298,
+                    "name": "VariableDeclaration",
+                    "src": "336:4:52"
+                  }
+                ],
+                "id": 299,
+                "name": "ParameterList",
+                "src": "335:6:52"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 299
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "commonType": {
+                            "typeIdentifier": "t_bytes4",
+                            "typeString": "bytes4"
+                          },
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "==",
+                          "type": "bool"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 295,
+                              "type": "bytes4",
+                              "value": "_interfaceID"
+                            },
+                            "id": 300,
+                            "name": "Identifier",
+                            "src": "355:12:52"
+                          },
+                          {
+                            "attributes": {
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "member_name": "selector",
+                              "type": "bytes4"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "member_name": "supportsInterface",
+                                  "referencedDeclaration": 307,
+                                  "type": "function (bytes4) pure external returns (bool)"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": -28,
+                                      "type": "contract ERC165",
+                                      "value": "this"
+                                    },
+                                    "id": 301,
+                                    "name": "Identifier",
+                                    "src": "371:4:52"
+                                  }
+                                ],
+                                "id": 302,
+                                "name": "MemberAccess",
+                                "src": "371:22:52"
+                              }
+                            ],
+                            "id": 303,
+                            "name": "MemberAccess",
+                            "src": "371:31:52"
+                          }
+                        ],
+                        "id": 304,
+                        "name": "BinaryOperation",
+                        "src": "355:47:52"
+                      }
+                    ],
+                    "id": 305,
+                    "name": "Return",
+                    "src": "348:54:52"
+                  }
+                ],
+                "id": 306,
+                "name": "Block",
+                "src": "342:65:52"
+              }
+            ],
+            "id": 307,
+            "name": "FunctionDefinition",
+            "src": "259:148:52"
+          }
+        ],
+        "id": 308,
+        "name": "ContractDefinition",
+        "src": "24:385:52"
+      }
+    ],
+    "id": 309,
+    "name": "SourceUnit",
+    "src": "0:409:52"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.7.4+commit.3f05b770.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.3.4",
+  "updatedAt": "2021-04-09T00:55:35.316Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "supportsInterface(bytes4)": {
+        "params": {
+          "_interfaceID": "The interface identifier, as specified in ERC-165"
+        },
+        "returns": {
+          "_0": "`true` if the contract implements `_interfaceID`"
+        }
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "supportsInterface(bytes4)": {
+        "notice": "Query if a contract implements an interface"
+      }
+    },
+    "version": 1
+  }
+}
