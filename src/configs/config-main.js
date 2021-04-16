@@ -1,8 +1,8 @@
 /* Main app configs go here */
 
 export const appConfig = {
-  name: 'Your React Dapp Name',
-  shortName: 'YourReactDapp',
-  description: 'An expert foundational React boilerplate for Ethereum Dapps',
+  name: 'Hashable Art Workspace',
+  shortName: 'hashable.art',
+  description: 'An expert nft hashart generator Dapp',
   splashScreenBackground: '#ffffff'
 }
